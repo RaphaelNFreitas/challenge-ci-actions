@@ -1,0 +1,25 @@
+{
+  "name": "challenge-ci-actions",
+  "version": "1.0.0",
+  "description": "This repository is for the FullCycle 3.0 docker course challenge.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaphaelNFreitas/challenge-ci-actions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaphaelNFreitas/challenge-ci-actions/issues"
+  },
+  "homepage": "https://github.com/RaphaelNFreitas/challenge-ci-actions#readme",
+  "devDependencies": {
+    "jest": "^29.0.1",
+    "@types/jest": "^29.0.0",
+    "sonar-scanner": "^3.1.0"
+  }
+}

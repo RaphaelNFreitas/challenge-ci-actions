@@ -1,8 +1,8 @@
 name: ci-node-worflow
 on: [push]
 jobs:
-  check-application:
   runs-on: ubuntu-latest
+  
   steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2

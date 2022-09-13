@@ -1,12 +1,16 @@
-name: ci-node-worflow
-on: [push]
+name: Build
+on:
+  pull_request:
+    branches:
+      - develop
 jobs:
-  runs-on: ubuntu-latest
+  sonarcloud:
+    runs-on: ubuntu-latest
   
-  steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 16
-    - run: npm ci
-    - run: npm run start
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run start

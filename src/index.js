@@ -3,22 +3,23 @@ const { querystring } = require('querystring')
 const calculator = require('./calculator')
 
 const server = http.createServer(function(request, response) {
-  console.dir(request.param)
 
   if (request.method == 'POST') {
-    console.log('POST')
-    let body = ''
+
+    let body = '';
+
     request.on('data', function(data) {
       body += data
-    })
+    });
 
     request.on('end', function() {
-      const post = querystring.parse(body)
-      const numbers = post.numbers
-      const result = calculator.add(numbers)
-      response.writeHead(200, {'Content-Type': 'text/html'})
-      response.end('Result: ' + result)
-    })
+      const post = querystring.parse(body);
+      const numbers = post.numbers;
+      const result = calculator.add(numbers);
+      response.writeHead(200, {'Content-Type': 'text/html'});
+      response.end('Result: ' + result);
+    });
+
   } else {
     let html = `
             <html>
@@ -28,9 +29,9 @@ const server = http.createServer(function(request, response) {
                         <input type="submit" value="Add" />
                     </form>
                 </body>
-            </html>`
-    response.writeHead(200, {'Content-Type': 'text/html'})
-    response.end(html)
+            </html>`;
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(html);
   }
 })
 
